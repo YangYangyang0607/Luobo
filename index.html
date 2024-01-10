@@ -1,1 +1,147 @@
-<p> lalalallalalala </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* {
+        border: 1px solid black;
+      }*/
+      .yinYing {
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+          0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+      }
+      .flex {
+        display: flex;
+      }
+      .baise {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .mgl8 {
+        margin-left: 8px;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid gray;
+        font-size: 14px;
+        columns: #666;
+      }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJU {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="ceBian baise yinYing">
+      <!--头像栏-->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex column"
+      >
+        <img src="picture\touXiang.jpg" alt="touXiang" height="80" width="80" />
+        <div style="margin-top: 10px">星猫</div>
+      </div>
+      <!--导航栏-->
+      <div class="flex column">
+        <!--导航条-->
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+      </div>
+    </div>
+    <!--主区域-->
+    <div class="flex1 flex column">
+      <!--头部栏-->
+      <div style="height: 80px; z-index: 1" class="baise yinYing"></div>
+      <!--内容区-->
+      <div style="overflow: auto" class="flex1 flex neiRong">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--数据区-->
+          <div class="flex shuJuQu">
+            <!--数据块-->
+            <div style="height: 100px" class="flex1 baise yinYing mgr8 shuJU">
+              sj1
+            </div>
+            <div style="height: 100px" class="flex1 baise yinYing mgr8 shuJU">
+              sj2
+            </div>
+            <div style="height: 100px" class="flex1 baise yinYing mgr8 shuJU">
+              sj3
+            </div>
+            <div style="height: 100px" class="flex1 baise yinYing shuJU">
+              sj4
+            </div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!--列表项-->
+            <div style="height: 160px" class="baise mgt8 yinYing">
+              function 名称 (){}=函数数据,let=可变数据,const=常量 let ren = {
+              mingZi:xingmao, nanDeMa:ture, }
+            </div>
+            <div style="height: 160px" class="baise mgt8 yinYing">lb2</div>
+            <div style="height: 160px" class="baise mgt8 yinYing">lb3</div>
+            <div style="height: 160px" class="baise mgt8 yinYing">lb4</div>
+            <div style="height: 160px" class="baise mgt8 yinYing">lb5</div>
+            <div style="height: 160px" class="baise mgt8 yinYing">lb6</div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!--提示区-->
+          <div style="height: 150px" class="baise yinYing">111</div>
+          <!--消息区-->
+          <div style="height: 300px" class="baise yinYing mgt8">222</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
